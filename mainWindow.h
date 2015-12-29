@@ -1,8 +1,12 @@
 
 #pragma once
 
-// QT
+ // QT
 #include <QMainWindow>
+
+ // VTK
+#include <vtkSmartPointer.h>
+#include <vtkRenderer.h>
 
 
 // FORWARD DECLARATIONS
@@ -24,7 +28,13 @@ public:
 
 
 public slots:
+	void onLoadMesh();
+
+private:
+	void initConnections();
 
 private:	
 	Ui::MainWindow* m_ui;
+
+	vtkSmartPointer<vtkRenderer> m_renderer;
 };
